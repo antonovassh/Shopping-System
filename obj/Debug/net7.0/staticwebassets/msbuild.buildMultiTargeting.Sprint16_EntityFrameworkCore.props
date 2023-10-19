@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Sprint16_EntityFrameworkCore.props" />
+</Project>

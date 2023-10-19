@@ -1,0 +1,32 @@
+﻿@model Sprint16_EntityFrameworkCore.Models.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Order Details</h1>
+
+<p>Order Date: @Model.OrderDate.ToShortDateString()</p>
+<p>Customer: @Model.Customer.FirstName @Model.Customer.LastName</p>
+<p>Supermarket: @Model.SuperMarkets.Name</p>
+
+<h2>Order Items</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderDetails)
+        {
+            <tr>
+                <td>@item.Product.Name</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
